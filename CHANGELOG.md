@@ -1,4 +1,30 @@
 ## 1.18.0 (Unreleased)
+
+FEATURES:
+
+* **New Resource:** `aws_glue_catalog_table` [GH-4368]
+
+ENHANCEMENTS:
+
+* resource/aws_dms_endpoint: Support `s3` `engine_name` and add `s3_settings` argument [GH-1685] and [GH-4447]
+* resource/aws_lb_target_group: Add `proxy_protocol_v2` argument [GH-4365]
+* resource/aws_spot_fleet_request: Mark `spot_price` optional (defaults to on-demand price) [GH-4424]
+* resource/aws_spot_fleet_request: Add plan time validation for `valid_from` and `valid_until` arguments [GH-4463]
+* resource/aws_spot_instance_request: Mark `spot_price` optional (defaults to on-demand price) [GH-4424]
+
+BUG FIXES:
+
+* data-source/aws_autoscaling_groups: Correctly paginate through over 50 results [GH-4433]
+* resource/aws_elastic_beanstalk_environment: Correctly handle `cname_prefix` attribute in China partition [GH-4485]
+* resource/aws_instance: Fix `root_device_mapping` matching of expected root device name with multiple block devices. [GH-4489]
+* resource/aws_launch_template: Prevent `parameter iops is not supported for gp2 volumes` error [GH-4344]
+* resource/aws_launch_template: Prevent `'iamInstanceProfile.name' may not be used in combination with 'iamInstanceProfile.arn'` error [GH-4344]
+* resource/aws_launch_template: Prevent `parameter groupName cannot be used with the parameter subnet` error [GH-4344]
+* resource/aws_launch_template: Separate usage of `ipv4_address_count`/`ipv6_address_count` from `ipv4_addresses`/`ipv6_addresses` [GH-4344]
+* resource/aws_redshift_cluster: Properly send all required parameters when resizing [GH-3127]
+* resource/aws_s3_bucket: Prevent crash from empty string CORS arguments [GH-4465]
+* resource/aws_ssm_document: Add missing account ID to `arn` attribute [GH-4436]
+
 ## 1.17.0 (May 02, 2018)
 
 NOTES:
